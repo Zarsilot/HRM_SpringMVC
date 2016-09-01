@@ -163,6 +163,6 @@
 		</table>
 
 		<!-- 页面底部 -->
-		<jsp:include page="foot.jsp"></jsp:include>
+		<jsp:include page="footer.jsp"></jsp:include>
 	</body>
 </html>

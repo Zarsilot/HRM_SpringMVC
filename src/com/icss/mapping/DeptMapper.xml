@@ -32,5 +32,19 @@
 			#{location_name,jdbcType=NVARCHAR},
 		)
 	</insert>
-
+	
+	<update id="updateDept" parameterType="com.icss.model.Department">
+	    UPDATE HRM_DEPT
+	    <trim prefix="SET" prefixOverrides=",">
+	        <if test="deptName != null and deptName != ''">
+	            dept_name = #{deptName}
+	        </if>
+	        <if test="age != null and age != ''">
+	            , location_name = #{locName}
+	        </if>
+	    </trim>
+	    where dept_id = ${deptId}
+	</update>
+	
+	
 </mapper>

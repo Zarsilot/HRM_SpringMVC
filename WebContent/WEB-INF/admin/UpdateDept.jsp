@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String path = request.getContextPath(); %>
-<%@ page import="com.icss.model.Departments" %>
+<%@ page import="com.icss.model.Department" %>
 <html>
 	<head>
 		<title>更新部门数据</title>
@@ -24,7 +24,7 @@
 						<table width="500" border="0" cellpadding="5" cellspacing="1"
 							bgcolor="#CCCCCC">
 							<%
-							Departments bean = (Departments) request.getAttribute("idBean");
+							Department bean = (Department) request.getAttribute("idBean");
 							
 							%>
 							<tr>
@@ -38,7 +38,7 @@
 								</td>
 								<td width="357" height="24" bgcolor="#FFFFFF">
 									<input name="department_id" type="text" id="department_id"
-									readonly="readonly" value="<%=bean.getDepartment_id() %>">
+									readonly="readonly" value="<%=bean.getDeptId() %>">
 									*
 								</td>
 							</tr>
@@ -48,7 +48,7 @@
 								</td>
 								<td height="24" bgcolor="#FFFFFF">
 									<input name="department_name" type="text" id="department_name" onblur="return checkDepName()"
-									value="<%=bean.getDepartment_name() %>">
+									value="<%=bean.getDeptName() %>">
 									*
 									<span id="depts"></span>
 								</td>
@@ -59,7 +59,7 @@
 								</td>
 								<td height="24" bgcolor="#FFFFFF">
 									<input name="location_name" type="text" id="location_name" onblur="return checkLoc()"
-									value="<%= bean.getLocation_name() %>">
+									value="<%= bean.getLocName() %>">
 									*
 									<span id="locts"></span>
 								</td>

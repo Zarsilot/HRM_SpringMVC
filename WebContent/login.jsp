@@ -87,7 +87,7 @@
 		    		return false;
 		    	}else{
 		    		var formId = document.getElementById("form1");
-		    		formId.action = "<%=path %>/LoginServlet";
+		    		formId.action = "<%=path %>/login";
 		    		return true;
 		    	}
 		    }

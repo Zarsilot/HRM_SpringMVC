@@ -1,9 +1,8 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% String path = request.getContextPath();%>
+<% String path = request.getContextPath(); String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;%>
 <html>
 	<head>
-		<title>首页</title>
 		<link rel="stylesheet" type="text/css" href="<%=path %>/css/style.css">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	</head>
@@ -22,6 +21,6 @@
 		</table>
 
 		<!-- 页面底部 -->
-        <jsp:include page="foot.jsp"></jsp:include>
+        <jsp:include page="footer.jsp"></jsp:include>
 	</body>
 </html>

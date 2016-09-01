@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icss.dao.IUserDao">
+	<resultMap id="BaseResultMap" type="com.icss.model.User">
+		<id column="user_id" property="adminId" jdbcType="INTEGER"></id>
+		<result column="user_name" property="adminname" jdbcType="NVARCHAR"></result>
+		<result column="passwd" property="adminpwd" jdbcType="NVARCHAR"></result>
+		<result column="alevel" property="adminlevel" jdbcType="INTEGER"></result>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		user_id,user_name,passwd,alevel
+	</sql>
+	<select id="selectUserById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from HRM_USER
+		where user_id = #{adminId,jdbcType=INTEGER}
+	</select>
+	<delete id="delDept" parameterType="java.lang.Integer">
+		delete from HRM_USER
+		where user_id = #{adminId,jdbcType=INTEGER}
+	</delete>
+	
+</mapper>

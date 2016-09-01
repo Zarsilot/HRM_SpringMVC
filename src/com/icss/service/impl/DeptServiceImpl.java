@@ -11,7 +11,7 @@ import com.icss.service.IDeptService;
 @Service("deptService")
 public class DeptServiceImpl implements IDeptService {
 	@Resource
-	private IDeptDao deptDao;
+	private IDeptDao deptDao ;
 
 	@Override
 	public Department getDeptById(Integer deptId) {
