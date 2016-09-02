@@ -16,6 +16,11 @@
 		from HRM_DEPT
 		where dept_id = #{dept_id,jdbcType=INTEGER}
 	</select>
+	<select id="selectAllDept" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from HRM_DEPT
+	</select>
 	<delete id="delDept" parameterType="java.lang.Integer">
 		delete from HRM_DEPT
 		where dept_id = #{dept_id,jdbcType=INTEGER}

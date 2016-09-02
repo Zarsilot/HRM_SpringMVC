@@ -1,5 +1,7 @@
 package com.icss.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import com.icss.model.Department;
@@ -11,4 +13,6 @@ public interface IDeptDao {
 	public int addDept(Department dept);
 	
 	public Department selectDeptById(int deptId);
+	
+	public List<Department> selectAllDept();
 }

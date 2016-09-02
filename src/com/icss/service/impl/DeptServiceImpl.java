@@ -1,5 +1,7 @@
 package com.icss.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +19,13 @@ public class DeptServiceImpl implements IDeptService {
 	public Department getDeptById(Integer deptId) {
 		// TODO Auto-generated method stub
 		return deptDao.selectDeptById(deptId);
+	}
+
+	@Override
+	public List<Department> getAllDept() {
+		// TODO Auto-generated method stub
+		List<Department> depts = deptDao.selectAllDept();
+		return depts;
 	}
 	
 	
