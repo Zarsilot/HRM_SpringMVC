@@ -24,8 +24,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</li>
 		<li>设置管理</li>
 	</ul>
-	<ul id="box"></ul>
+	<div id="dept">
+		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>  
+		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a>  
+		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>  
+		<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">搜索</a>  
+	</div>
 	
+	<div>
+		<input class="easyui-datetimebox" name="birthday"     
+        data-options="required:true,showSeconds:false" value="3/4/2010 2:3" style="width:180px">  
+	</div>
+	<div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10" style="background:#efefef;border:1px solid #ccc;"></div> 
 <script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
 <script type="text/javascript" src="<%=path %>/easyui/easyloader.js"></script>
