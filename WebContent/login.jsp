@@ -7,6 +7,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>用户登陆</title>
 		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/default/easyui.css">   
+		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/icon.css">   
+		<link rel="stylesheet" type="text/css" href="<%=path %>/css/index.css"> 
 	</head>
 	<body>
 	<% 
@@ -122,5 +125,9 @@
 		    	img.src= "<%=path %>/ImgCodeMakerServlet";
 		    }
 		</script>
+		<script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/easyloader.js"></script>
+		<script type="text/javascript" src="<%=path %>/js/index.js"></script>
 	</body>
 </html>

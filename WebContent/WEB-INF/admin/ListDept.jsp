@@ -18,7 +18,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 	function addDept(){
 		alert('添加部门');
+		
 	}
+	
 </script>
 </head>
 <body>

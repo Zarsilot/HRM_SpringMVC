@@ -12,23 +12,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/default/easyui.css">   
 <link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/icon.css">   
 <link rel="stylesheet" type="text/css" href="<%=path %>/css/index.css"> 
-<script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="<%=path %>/easyui/easyloader.js"></script>
 </head>
 
 <body>
-	<div id="tt" class="easyui-tabs" style="width:500px;height:250px;">   
-	    <div title="Tab1" style="padding:20px;display:none;">   
-	        tab1    
-	    </div>   
-	    <div title="Tab2" style="overflow:auto;padding:20px;display:none;">   
-	        tab2    
-	    </div>   
-	    <div title="Tab3" style="padding:20px;display:none;">   
-	        tab3    
-	    </div>   
-	</div>  
-
+	<ul id="testBox" class="easyui-tree">
+		<li>
+			<span>系统管理</span>
+			<ul>
+				<li>配置参数</li>
+			</ul>
+		</li>
+		<li>设置管理</li>
+	</ul>
+	<ul id="box"></ul>
+	
+<script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="<%=path %>/easyui/easyloader.js"></script>
+<script type="text/javascript" src="<%=path %>/js/index.js"></script>
 </body>
 </html>

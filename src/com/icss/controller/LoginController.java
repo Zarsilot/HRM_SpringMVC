@@ -16,7 +16,7 @@ public class LoginController {
 	@Resource
 	private IUserService userService;
 	
-	@RequestMapping("/login")
+	@RequestMapping("login")
 	public String login(HttpServletRequest req, Model model){
 		String uname = req.getParameter("adminname");
 		String pswd = req.getParameter("adminpwd");
@@ -28,4 +28,11 @@ public class LoginController {
 		
 		return "index";
 	}
+	
+	@RequestMapping("login/nav.do")
+	public void getSysParam(){
+		
+		
+	}
+	
 }
