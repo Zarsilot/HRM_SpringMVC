@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<% String path = request.getContextPath(); String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;%>
+<% 
+String path = request.getContextPath(); 
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
@@ -10,6 +13,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>部门列表</title>
 <link rel="stylesheet" type="text/css" href="<%=path %>/css/style.css">
+<script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
 <script type="text/javascript">
 	function addDept(){
 		alert('添加部门');
