@@ -4,8 +4,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.icss.model.User;
 import com.icss.service.IUserService;
@@ -17,7 +17,8 @@ public class LoginController {
 	private IUserService userService;
 	
 	@RequestMapping("login")
-	public String login(HttpServletRequest req, Model model){
+	public ModelAndView login(HttpServletRequest req, ModelAndView view){
+		view.setViewName("index");
 		String uname = req.getParameter("adminname");
 		String pswd = req.getParameter("adminpwd");
 		int alevel = Integer.parseInt(req.getParameter("adminlevel"));
@@ -26,7 +27,7 @@ public class LoginController {
 			System.out.println("获取到数据");
 		}
 		
-		return "index";
+		return view;
 	}
 	
 	@RequestMapping("login/nav.do")

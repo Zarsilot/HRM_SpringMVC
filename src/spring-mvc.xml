@@ -19,7 +19,7 @@
 	<context:component-scan base-package="com.icss.controller"></context:component-scan>
 	<context:component-scan base-package="com.icss.service"></context:component-scan>
 	
-	<!-- 定义跳转文件的前后缀，视图模型设置 -->
+	<!-- 定义跳转文件的前后缀，视图模型设置 --> 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/admin/"></property>
 		<property name="suffix" value=".jsp"></property>
@@ -28,4 +28,22 @@
 	
 	<!-- 对静态资源扫描 -->
 	<mvc:default-servlet-handler/>  
+	
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 设置上传参数和输出参数的数据转换器 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
 </beans>

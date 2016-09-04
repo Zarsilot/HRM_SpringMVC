@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.icss.model.Department;
@@ -19,13 +20,26 @@ public class DeptController {
 	@Resource
 	private IDeptService deptService;
 	
-	@RequestMapping("listAll")
-	public ModelAndView getAllDept(HttpServletRequest req,ModelAndView view){
-		view.setViewName("ListDept");
+	@RequestMapping("listView")
+	public String list(HttpServletRequest req,ModelAndView view){
+		view.setViewName("Depts");
 		List<Department> depts = new ArrayList<>();
 		depts=deptService.getAllDept();
-		view.addObject("depts", depts);
-		return view;
+//		System.out.println("进入---");
+		return "Depts";
+	}
+	
+	@RequestMapping("listAll.do")
+	@ResponseBody
+	public Object getAllDept(HttpServletRequest req,ModelAndView view){
+//		view.setViewName("Depts");
+		List<Department> depts = new ArrayList<>();
+		depts=deptService.getAllDept();
+		
+//		JSONArray json = JSONArray.fromObject(depts);
+//		System.out.println("部门---"+json);
+//		view.addObject("djson", json);
+		return depts;
 	}
 	
 	@RequestMapping("addDept")

@@ -61,7 +61,7 @@
   height: 16px;
   opacity: 0.6;
   filter: alpha(opacity=60);
-  margin: 0 5px 0 2px;
+  margin: 0 0 0 2px;
   vertical-align: top;
 }
 .panel-tool a:hover {

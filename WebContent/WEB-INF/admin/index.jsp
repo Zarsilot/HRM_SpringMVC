@@ -7,6 +7,13 @@
 		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/default/easyui.css">   
 		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/icon.css">   
 		<link rel="stylesheet" type="text/css" href="<%=path %>/css/index.css">
+	    <script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.tabs.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.parser.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.panel.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.tree.js"></script>
+		
 	</head>
 
 	<body class="easyui-layout">
@@ -23,13 +30,43 @@
 	    <div data-options="region:'west',title:'菜单栏',split:true" style="width:20%;" dir="ltr">	
 				<div class="easyui-accordion" data-options="fit:true,border:false">   
 			        <div title="系统参数" style="padding:5px;">   
-			           content1 
+			           <ul id="sysBox" class="easyui-tree">
+							<li>
+								<span>系统管理</span>
+								<ul>
+									<li>
+										<span>参数一</span>
+									</li>
+									<li>配置参数</li>
+									<li>参数三</li>
+								</ul>
+							</li>
+						</ul>
 			        </div>   
-			        <div title="功能管理" data-options="selected:true" style="padding:5px;">   
-			            content2   
+			        <div title="功能管理" style="padding:5px;">   
+			            <ul id="funBox" class="easyui-tree">
+							<li>
+								<span>系统管理</span>
+								<ul>
+									<li>
+										<span>参数一</span>
+									</li>
+									<li>配置参数</li>
+								</ul>
+							</li>
+							<li>设置管理</li>
+						</ul>  
 			        </div>   
-			        <div title="用户管理" style="padding:5px">   
-			            content3   
+			        <div title="用户管理" data-options="selected:true" style="padding:5px">   
+			            <ul id="deptBox" class="easyui-tree">
+							<li>
+								<span>部门信息</span>
+								<ul>
+									<li>参数一</li>
+									<li id="deptList">部门列表</li>
+								</ul>
+							</li>
+						</ul>   
 			        </div>   
 				</div>
 	    </div>   
@@ -41,8 +78,6 @@
 	    	</div>
 	    </div>  
 	    
-	    <script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
-		<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
 		<script type="text/javascript" src="<%=path %>/easyui/easyloader.js"></script>
 		<script type="text/javascript" src="<%=path %>/js/easyui-rtl.js"></script>
 		<script type="text/javascript" src="<%=path %>/js/admin.js"></script>

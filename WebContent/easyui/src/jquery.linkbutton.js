@@ -1,10 +1,10 @@
-﻿/**
- * jQuery EasyUI 1.5
+/**
+ * jQuery EasyUI 1.4.1
  * 
- * Copyright (c) 2009-2016 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2014 www.jeasyui.com. All rights reserved.
  *
- * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
- * To use it on other terms please contact us: info@jeasyui.com
+ * Licensed under the GPL license: http://www.gnu.org/licenses/gpl.txt
+ * To use it on other terms please contact us at info@jeasyui.com
  *
  */
 /**
@@ -51,10 +51,9 @@
 		var opts = $.data(target, 'linkbutton').options;
 		var t = $(target).empty();
 		
-		t.addClass('l-btn').removeClass('l-btn-plain l-btn-selected l-btn-plain-selected l-btn-outline');
+		t.addClass('l-btn').removeClass('l-btn-plain l-btn-selected l-btn-plain-selected');
 		t.removeClass('l-btn-small l-btn-medium l-btn-large').addClass('l-btn-'+opts.size);
 		if (opts.plain){t.addClass('l-btn-plain')}
-		if (opts.outline){t.addClass('l-btn-outline')}
 		if (opts.selected){
 			t.addClass(opts.plain ? 'l-btn-selected l-btn-plain-selected' : 'l-btn-selected');
 		}
@@ -216,10 +215,10 @@
 	$.fn.linkbutton.parseOptions = function(target){
 		var t = $(target);
 		return $.extend({}, $.parser.parseOptions(target, 
-			['id','iconCls','iconAlign','group','size','text',{plain:'boolean',toggle:'boolean',selected:'boolean',outline:'boolean'}]
+			['id','iconCls','iconAlign','group','size',{plain:'boolean',toggle:'boolean',selected:'boolean'}]
 		), {
 			disabled: (t.attr('disabled') ? true : undefined),
-			text: ($.trim(t.html()) || undefined),
+			text: $.trim(t.html()),
 			iconCls: (t.attr('icon') || t.attr('iconCls'))
 		});
 	};
@@ -229,7 +228,6 @@
 		disabled: false,
 		toggle: false,
 		selected: false,
-		outline: false,
 		group: null,
 		plain: false,
 		text: '',
