@@ -5,6 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/default/easyui.css">   
+		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/default/dialog.css">   
 		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/icon.css">   
 		<link rel="stylesheet" type="text/css" href="<%=path %>/css/index.css">
 	    <script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
@@ -13,11 +14,13 @@
 		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.parser.js"></script>
 		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.panel.js"></script>
 		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.tree.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.messager.js"></script>
 		
 	</head>
 
 	<body class="easyui-layout">
-	    <div data-options="region:'north',title:'North Title',split:true,noheader:true" style="height:80px;background:#ccc;">
+	    <div data-options="region:'north',title:'North Title',split:true,noheader:true" style="height:80px;background:#b7fffc;">
 	    	
 	    	<div>
 	    		<span>后台管理系统</span>

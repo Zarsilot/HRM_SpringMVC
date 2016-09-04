@@ -27,6 +27,18 @@ public class DeptServiceImpl implements IDeptService {
 		List<Department> depts = deptDao.selectAllDept();
 		return depts;
 	}
+
+	@Override
+	public int addDept(Department dept) {
+		// TODO Auto-generated method stub
+		return deptDao.insertOneDept(dept);
+	}
+
+	@Override
+	public int delOneDept(Integer deptId) {
+		// TODO Auto-generated method stub
+		return deptDao.delOneDept(deptId);
+	}
 	
 	
 }

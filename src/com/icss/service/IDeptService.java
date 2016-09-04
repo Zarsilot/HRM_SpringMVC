@@ -11,4 +11,8 @@ public interface IDeptService {
 	public Department getDeptById(Integer deptId);
 	
 	public List<Department> getAllDept();
+	
+	public int addDept(Department dept);
+	
+	public int delOneDept(Integer deptId);
 }

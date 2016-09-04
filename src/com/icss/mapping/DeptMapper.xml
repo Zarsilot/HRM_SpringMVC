@@ -21,20 +21,20 @@
 		<include refid="Base_Column_List" />
 		from HRM_DEPT
 	</select>
-	<delete id="delDept" parameterType="java.lang.Integer">
+	<delete id="delOneDept" parameterType="java.lang.Integer">
 		delete from HRM_DEPT
-		where dept_id = #{dept_id,jdbcType=INTEGER}
+		where dept_id = #{deptId,jdbcType=INTEGER}
 	</delete>
-	<insert id="addDept" parameterType="com.icss.model.Department">
+	<insert id="insertOneDept" parameterType="com.icss.model.Department">
 		insert into HRM_DEPT (
 			dept_id,
 			dept_name,
 			location_name
 		)
 		values (
-			#{department_id,jdbcType=INTEGER}, 
-			#{department_name,jdbcType=NVARCHAR},
-			#{location_name,jdbcType=NVARCHAR},
+			#{deptId,jdbcType=INTEGER}, 
+			#{deptName,jdbcType=NVARCHAR},
+			#{locName,jdbcType=NVARCHAR}
 		)
 	</insert>
 	

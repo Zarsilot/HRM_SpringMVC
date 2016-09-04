@@ -6,14 +6,16 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>部门信息</title>
-
+	<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/default/dialog.css">   
+	<script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
 </head>
 <body>
+	<!-- onclick="javascript:addDept()" -->
 	<div id="toolbar">
-		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" noClick="addDept()">添加</a>  
-		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a>  
-		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a> 
+		<a id="add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>  
+		<a id="del" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a>  
+		<a id="mod" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'">修改</a> 
 		<input type="text" name="searchDept"/> 
 		<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">搜索</a> 
 		<label>起始日期：</label>
@@ -38,10 +40,31 @@
 			</thead>
 		</table>
 	</div>
+	<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+		closed="true" buttons="#dlg-buttons">
+		<div class="ftitle">部门信息</div><hr>
+		<form id="fm" method="post">
+			<div class="fitem">
+				<label>部门编号:</label>
+				<input name="deptId" class="easyui-validatebox" required="true">
+			</div>
+			<div class="fitem">
+				<label>部门名称:</label>
+				<input name="deptName" class="easyui-validatebox" required="true">
+			</div>
+			<div class="fitem">
+				<label>部门地址:</label>
+				<input name="locName">
+			</div>
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a id="save" href="#" class="easyui-linkbutton" iconCls="icon-ok">保存</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
 	<!--  <div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10" style="background:#efefef;border:1px solid #ccc;"></div> 
 	-->
-	<!-- <script type="text/javascript" src="<%=path %>/js/dept.js"></script> -->
-	<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.window.js"></script>
+	<script type="text/javascript" src="<%=path %>/js/dept.js"></script>
 	
 </body>
 </html>
