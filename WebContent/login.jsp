@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/icon.css">   
 		<link rel="stylesheet" type="text/css" href="<%=path %>/css/index.css"> 
 		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.validatebox.js"></script>
+		<script type="text/javascript" src="<%=path %>/easyui/locale/easyui-lang-zh_CN.js"></script>
 	</head>
 	<body>
 	<% 

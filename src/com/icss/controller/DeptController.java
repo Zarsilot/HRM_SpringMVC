@@ -77,4 +77,12 @@ public class DeptController {
 		view.setViewName("success");
 		return view;
 	}
+	
+	@RequestMapping("analyze")
+	public ModelAndView analyzeEmp(HttpServletRequest req,ModelAndView view){
+		view.setViewName("analyze");
+		return view;
+	}
+	
+	
 }

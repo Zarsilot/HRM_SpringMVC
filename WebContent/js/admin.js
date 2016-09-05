@@ -102,7 +102,17 @@ $(function(){
 					});
 				}
 			break;
-			
+			case 'empAnalyze':
+				if($('#tabs').tabs('exists',node.text)){
+					$('#tabs').tabs('select',node.text);
+				}else{
+					$('#tabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						href:'Dept/analyze',
+					});
+				}
+			break;
 			}
 		}
 	});

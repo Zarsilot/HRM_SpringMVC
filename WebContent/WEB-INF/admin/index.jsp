@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.tree.js"></script>
 		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.form.js"></script>
 		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.messager.js"></script>
-		
+		<script type="text/javascript" src="<%=path %>/js/highcharts.js"></script>
 	</head>
 
 	<body class="easyui-layout">
@@ -72,6 +72,7 @@
 								<ul>
 									<li id="sys1">参数一</li>
 									<li id="deptList">部门列表</li>
+									<li id="empAnalyze">员工分析</li>
 								</ul>
 							</li>
 						</ul>   

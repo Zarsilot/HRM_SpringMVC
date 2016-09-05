@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icss.dao.IEmpDataDao">
+	<resultMap id="BaseResultMap" type="com.icss.model.EmpData">
+		<id column="eid" property="eId" jdbcType="INTEGER"></id>
+		<result column="ename" property="name" jdbcType="NVARCHAR"></result>
+		<result column="percen" property="percent" jdbcType="INTEGER"></result>
+	</resultMap>
+	
+	<resultMap id="EmpData" type="com.icss.model.EmpData">
+		<result column="ename" property="name" jdbcType="NVARCHAR"></result>
+		<result column="percen" property="percent" jdbcType="INTEGER"></result>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		eid,ename,percen
+	</sql>
+	<select id="getAnalyzeData" resultMap="EmpData">
+		select ename,percen
+		from HRM_EMPDATA
+	</select>
+
+	
+</mapper>
