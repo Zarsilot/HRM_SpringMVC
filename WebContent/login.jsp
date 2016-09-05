@@ -6,10 +6,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>用户登陆</title>
-		<link href="css/style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/default/easyui.css">   
 		<link rel="stylesheet" type="text/css" href="<%=path %>/easyui/themes/icon.css">   
 		<link rel="stylesheet" type="text/css" href="<%=path %>/css/index.css"> 
+		<script type="text/javascript" src="<%=path %>/easyui/plugins/jquery.validatebox.js"></script>
 	</head>
 	<body>
 	<% 
@@ -17,49 +17,15 @@
 	String name = ""; 
 	if(cookies != null){
 		for(Cookie ck : cookies){
-			if(ck.getName().equals("name")){
+			if(ck.getName().equals("cname")){
 				name = ck.getValue();
 				break;
 			}
 		}
 	}
 	%>
-		<form name="form1" method="post" action="" id="form1" onsubmit="return checkForm()">
-			<table width="300" border="0" align="center" cellpadding="4"
-				cellspacing="1" bgcolor="#FF9900">
-				<tr>
-					<td height="24" colspan="2" align="center" bgcolor="#FFCC66">
-						管理员登陆${requestScope.sname }
-					</td>
-				</tr>
-				<tr>
-					<td width="77" height="24" align="center" bgcolor="#FFFFFF">
-						管理账号
-					</td>
-					<td width="204" height="24" bgcolor="#FFFFFF">
-						<input name="adminname" type="text" id="adminname" class="input1" value="<%=name %>">
-					</td>
-				</tr>
-				<tr>
-					<td height="24" align="center" bgcolor="#FFFFFF">
-						管理密码
-					</td>
-					<td height="24" bgcolor="#FFFFFF">
-						<input name="adminpwd" type="password" id="adminpwd"
-							class="input1">
-					</td>
-				</tr>
-				<tr>
-					<td height="24" align="center" bgcolor="#FFFFFF">
-						管理级别
-					</td>
-					<td height="24" bgcolor="#FFFFFF">
-						<input name="adminlevel" type="radio" value="1" checked>
-						管理员
-						<input name="adminlevel" type="radio" value="2">
-						操作员
-					</td>
-				</tr>
+				
+				<!-- 
 				<tr>
 					<td height="24" align="center" bgcolor="#FFFFFF">
 						验证码：
@@ -69,55 +35,35 @@
 						<img id="img" src="ImgCodeMakerServlet" onclick="changeImg()">		
 					</td>
 				</tr>
-				
-				<tr>
-					<td height="24" colspan="2" align="center" bgcolor="#FFFFFF">
-						<input type="submit" name="Submit" value="进入系统" onClick="">
-						&nbsp;&nbsp;
-						<input type="hidden" name="targetURL" value="">
-					</td>
-				</tr>
-			</table>
-		</form>
+				 -->
+		
+		<form id="loginform" method="post" onsubmit="return checkForm()">   
+			<fieldset style="width:260px;height:150px">
+				<legend>登录框</legend>
+				<label for="name">账号:</label>   
+		        <input class="easyui-textbox" name="adminName" data-options="iconCls:'icon-man',required:true" style="width:160px">
+		        	${requestScope.sname }
+		        </input><br>  
+		         <label for="pawd">密码:</label>   
+		        <input class="easyui-textbox" name="adminpwd" type="password" data-options="iconCls:'icon-lock',required:true" style="width:160px">
+		        	
+		        </input> <br>
+		         <label for="name">级别:</label>   
+		         <input name="adminLevel" type="radio" value="1" style="width:30px">管理员</input>
+		         <input name="adminLevel" type="radio" value="2" checked="checked" style="width:30px">用户</input> <br>       
+			    <div>
+			    	<input type="submit" name="Submit" value="进入系统">
+							&nbsp;&nbsp;
+					<input type="hidden" name="targetURL" value="">
+			    </div>  
+			</fieldset>
+		</form>  
 		
 		<script type="text/javascript">
 		    function checkForm(){
-		    	if(!checkName()){
-		    		return false;
-		    	}else if(!checkPswd()){
-		    		return false;
-		    	}else if(!checkCode()){
-		    		return false;
-		    	}else{
-		    		var formId = document.getElementById("form1");
-		    		formId.action = "<%=path %>/login";
-		    		return true;
-		    	}
-		    }
-		    
-		    function checkName(){
-		    	var name = document.getElementById("adminname");
-		    	if(name == null || name == ""){
-		    		return false;
-		    	}else{
-		    		return true;
-		    	}
-		    }
-		    function checkPswd(){
-		    	var pwd = document.getElementById("adminpwd");
-		    	if(pwd == null || pwd == ""){
-		    		return false;
-		    	}else{
-		    		return true;
-		    	}
-		    }
-		    function checkCode(){
-		    	var code = document.getElementById("admincode");
-		    	if(code == null || code == ""){
-		    		return false;
-		    	}else{
-		    		return true;
-		    	}
+	    		var formId = document.getElementById("loginform");
+	    		formId.action = "<%=path %>/login.do";
+	    		return true;
 		    }
 		    
 		    function changeImg(){
@@ -128,6 +74,5 @@
 		<script type="text/javascript" src="<%=path %>/easyui/jquery.easyui.min.js"></script>
 		<script type="text/javascript" src="<%=path %>/easyui/jquery.min.js"></script>
 		<script type="text/javascript" src="<%=path %>/easyui/easyloader.js"></script>
-		<script type="text/javascript" src="<%=path %>/js/index.js"></script>
 	</body>
 </html>

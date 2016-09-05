@@ -39,20 +39,20 @@ $(function(){
 			}
 		});
 	}
-//	var row = $('#dg').datagrid('getSelected');
-//	if (row){
+	//var row = $('#dg').datagrid('getSelected');
+	//if (row){
 //		$('#dlg').dialog('open').dialog('setTitle','修改部门');
 //		$('#fm').form('load',row);
 //		url = 'updDept.do?id='+row.deptId;
-//	}
-//	
+	//}
+	//
 	function delOneDept(){
 		var row = $('#dg').datagrid('getSelected');
 //		alert(row.deptId);
 //		alert(typeof row);
 		
 		if (row != null){
-			$.messager.confirm('Confirm','你确定要删除该用户吗?',function(r){
+			$.messager.confirm('提示','你确定要删除该用户吗?',function(r){
 				if (r){
 					$.post('Dept/delOneDept.do',{deptId:row.deptId},function(result){
 						if (result.success){
@@ -68,7 +68,5 @@ $(function(){
 			});
 		}
 	}
-	
-	
 	
 });

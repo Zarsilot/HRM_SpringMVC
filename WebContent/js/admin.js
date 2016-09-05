@@ -1,10 +1,10 @@
 $(function(){
+	//对tabs的模式定义
 	$('#tabs').tabs({
 		fit:true,
 		border:false,
-		closeable:true,
+		closable:true,  
 	});
-	
 	/*
 	 * 通过导航栏打开窗口
 	 */
@@ -35,25 +35,53 @@ $(function(){
 //			}
 //		}
 //	});
+//	
+	$('#sysBox').tree({
+		url:'/tree.json',
+	});
 	
 	var selected = $('#deptBox').tree('getChecked');	
 	$('#deptBox').tree({
-//		url:'Depts.jsp',
-//		onClick:function(node){
-//			alert(node.text);
-//		}
 		onClick : function(node){
-			if(node){
+//			if(node.id == 'deptList'){
+//				if($('#tabs').tabs('exists',node.text)){
+//					$('#tabs').tabs('select',node.text);
+//				}else{
+//					$('#tabs').tabs('add',{
+//						title:node.text,
+//						closeable:true,
+//						href:'Dept/listView',
+//					});
+//				}
+//			}else if(node.id == 'sys1'){
+//			
+//		    }
+			
+			//用switch替换if-else语句
+			switch(node.id){
+			case 'deptList':
 				if($('#tabs').tabs('exists',node.text)){
 					$('#tabs').tabs('select',node.text);
 				}else{
 					$('#tabs').tabs('add',{
 						title:node.text,
-//						iconCls:node.iconCls,
-						closeable:true,
+						closable:true,
 						href:'Dept/listView',
 					});
 				}
+			break;
+			case 'sys1':
+				if($('#tabs').tabs('exists',node.text)){
+					$('#tabs').tabs('select',node.text);
+				}else{
+					$('#tabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						href:'Dept/sys1',
+					});
+				}
+			break;
+			
 			}
 		}
 	});

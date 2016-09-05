@@ -320,7 +320,7 @@
 }
 .l-btn-plain {
   border: 0;
-  padding: 1px;
+  padding: 2px 5px;
 }
 .l-btn-left {
   display: inline-block;
@@ -450,9 +450,9 @@
   background: linear-gradient(to bottom,#ffffff 0,#eeeeee 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#eeeeee,GradientType=0);
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
 }
 .l-btn:hover {
   background: #eaf2ff;
@@ -461,7 +461,7 @@
   filter: none;
 }
 .l-btn-plain {
-  background: transparent;
+  background: #fff;
   border: 0;
   filter: none;
 }
@@ -469,9 +469,9 @@
   background: #eaf2ff;
   color: #000000;
   border: 1px solid #b7d2ff;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
 }
 .l-btn-disabled,
 .l-btn-disabled:hover {
@@ -506,17 +506,17 @@
 }
 .textbox {
   position: relative;
-  border: 1px solid #95B8E7;
+  border: 1px solid #f4f4f4;
   background-color: #fff;
   vertical-align: middle;
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   margin: 0;
-  padding: 0;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  padding: 3px;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
 }
 .textbox .textbox-text {
   font-size: 12px;

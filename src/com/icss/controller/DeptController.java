@@ -64,12 +64,17 @@ public class DeptController {
 	@ResponseBody
 	public Object delOneDept(HttpServletRequest req){
 		Integer deptId =  Integer.parseInt(req.getParameter("deptId"));
-		System.out.println("进入删除");
-		System.out.println(deptId);
+//		System.out.println("进入删除");
+//		System.out.println(deptId);
 		deptService.delOneDept(deptId);
 		Map<String, Object> result = new HashMap<>();
 		result.put("success", "true");
 		return result;
 	}
-
+	
+	@RequestMapping("sys1")
+	public ModelAndView listSys(HttpServletRequest req,ModelAndView view){
+		view.setViewName("success");
+		return view;
+	}
 }

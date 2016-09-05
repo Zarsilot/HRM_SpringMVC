@@ -12,7 +12,7 @@
 </head>
 <body>
 	<!-- onclick="javascript:addDept()" -->
-	<div id="toolbar">
+	<div>
 		<a id="add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>  
 		<a id="del" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a>  
 		<a id="mod" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'">修改</a> 
@@ -40,6 +40,7 @@
 			</thead>
 		</table>
 	</div>
+	<!-- 新增部门对话框  -->
 	<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
 		closed="true" buttons="#dlg-buttons">
 		<div class="ftitle">部门信息</div><hr>
