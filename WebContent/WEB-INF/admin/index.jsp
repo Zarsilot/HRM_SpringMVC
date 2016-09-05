@@ -26,8 +26,8 @@
 	    <div data-options="region:'north',title:'North Title',split:true,noheader:true" style="height:80px;background:#b7fffc;">
 	    	
 	    	<div>
-	    		<span>后台管理系统</span>
-	    		<p style="float:right;padding:5px 10px;">欢迎您,<%=name %> ！| <a href="redirect:login" style="text-decoration:none">退出系统</a></p>
+	    		<span style="position:absolute;font-size:22px;top:10px;left:20px">公司后台管理系统</span>
+	    		<p style="position:absolute;right:15px;top:30px;">欢迎您,<%=name %> ！| <a href="redirect:login" style="text-decoration:none">退出系统</a></p>
 	    	</div>
 	    	<a href="javascript:void(0)" id="mb" class="easyui-menubutton"     
         		data-options="menu:'#mm'">系统</a>   

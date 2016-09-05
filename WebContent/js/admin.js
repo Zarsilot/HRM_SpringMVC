@@ -37,7 +37,28 @@ $(function(){
 //	});
 //	
 	$('#sysBox').tree({
-		url:'/tree.json',
+//		url:'/tree.json',
+		lines:true,
+		data: [{	
+					"id":11,
+					"text": "系统管理",
+					"children": [
+						{
+							id:111,
+							"text": "更新信息"
+						},
+						{	
+							id:112,
+							"text": "程序信息"
+						},
+					]
+				},
+				{
+					"id":12,
+					"text": "系统管理"
+				}]
+	
+
 	});
 	
 	var selected = $('#deptBox').tree('getChecked');	

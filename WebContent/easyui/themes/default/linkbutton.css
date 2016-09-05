@@ -152,6 +152,10 @@
   filter: none;
 }
 .l-btn-plain {
+  position:absolute;
+  left:20px;
+  top:40px;
+  width:150px;
   background: #fff;
   border: 0;
   filter: none;

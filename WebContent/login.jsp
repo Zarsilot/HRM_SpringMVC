@@ -39,18 +39,24 @@
 		
 		<form id="loginform" method="post" onsubmit="return checkForm()">   
 			<fieldset style="width:260px;height:150px">
+				
 				<legend>登录框</legend>
+				<div class="logItem">
 				<label for="name">账号:</label>   
 		        <input class="easyui-textbox" name="adminName" data-options="iconCls:'icon-man',required:true" style="width:160px">
 		        	${requestScope.sname }
-		        </input><br>  
+		        </input><br> 
+		        </div> 
+		        <div class="logItem">
 		         <label for="pawd">密码:</label>   
 		        <input class="easyui-textbox" name="adminpwd" type="password" data-options="iconCls:'icon-lock',required:true" style="width:160px">
-		        	
+		        </div>	
+		        <div class="logItem">
 		        </input> <br>
 		         <label for="name">级别:</label>   
 		         <input name="adminLevel" type="radio" value="1" style="width:30px">管理员</input>
-		         <input name="adminLevel" type="radio" value="2" checked="checked" style="width:30px">用户</input> <br>       
+		         <input name="adminLevel" type="radio" value="2" checked="checked" style="width:30px">用户</input> <br> 
+		        </div>      
 			    <div>
 			    	<input type="submit" name="Submit" value="进入系统">
 							&nbsp;&nbsp;

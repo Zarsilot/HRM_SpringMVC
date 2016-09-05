@@ -527,9 +527,9 @@
   vertical-align: top;
   outline-style: none;
   resize: none;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
 }
 .textbox .textbox-prompt {
   font-size: 12px;
