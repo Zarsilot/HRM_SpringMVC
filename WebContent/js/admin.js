@@ -36,16 +36,20 @@ $(function(){
 //		}
 //	});
 //	
+	/*
+	 * 系统参数
+	 */
 	$('#sysBox').tree({
 //		url:'/tree.json',
+//		url:'Emp/assignJob.do',
 		lines:true,
 		data: [{	
 					"id":11,
 					"text": "系统管理",
 					"children": [
 						{
-							id:111,
-							"text": "更新信息"
+							"id":111,
+							"text": "工作日历"
 						},
 						{	
 							id:112,
@@ -60,8 +64,45 @@ $(function(){
 	
 
 	});
-	
+	$('#sysBox').tree({
+		onClick : function(node){
+//			if(node.id == 'deptList'){
+//				if($('#tabs').tabs('exists',node.text)){
+//					$('#tabs').tabs('select',node.text);
+//				}else{
+//					$('#tabs').tabs('add',{
+//						title:node.text,
+//						closeable:true,
+//						href:'Dept/listView',
+//					});
+//				}
+//			}else if(node.id == 'sys1'){
+//			
+//		    }
+			
+			//用switch替换if-else语句
+			switch(node.id){
+			case 111:
+				if($('#tabs').tabs('exists',node.text)){
+					$('#tabs').tabs('select',node.text);
+				}else{
+					$('#tabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						href:'Emp/assignJob.do',
+					});
+				}
+			break;
+			
+			
+			}
+		}
+	});
+	//sysBox结束
 	var selected = $('#deptBox').tree('getChecked');	
+	/*
+	 * 部门管理
+	 */
 	$('#deptBox').tree({
 		onClick : function(node){
 //			if(node.id == 'deptList'){
@@ -113,9 +154,22 @@ $(function(){
 					});
 				}
 			break;
+			case '111':
+				if($('#tabs').tabs('exists',node.text)){
+					$('#tabs').tabs('select',node.text);
+				}else{
+					$('#tabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						href:'Emp/assignJob.do',
+					});
+				}
+			break;
+			
+			
 			}
 		}
 	});
-	
+	//depBox结束
 	
 });

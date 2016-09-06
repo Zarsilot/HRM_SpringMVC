@@ -1,4 +1,7 @@
 $(function() {
+	/*
+	 * 第一种实现方法
+	 */
 	//	var chart1 = new Highcharts.Chart({
 	//	    chart: {
 	//	        renderTo: "container",
@@ -7,7 +10,7 @@ $(function() {
 	//	        plotShadow: false,
 	//	    },
 	//	    title: {
-	//	        text: '集团分子公司人员组成'
+	//	        text: '各部门员工分析'
 	//	    },
 	//	    tooltip: {
 	//	        pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -33,7 +36,20 @@ $(function() {
 	//	        data: []
 	//	    }]
 	//	});
+//	$.ajaxSettings.async = false;
+//	var data1 = [];
+//	$.getJSON("Emp/analyzeEmp.do", function(dict) {
+//		//对json进行遍历
+//		$.each(dict, function(i, item) {
+//			var dd = new Array(item.name,item.percent);
+//            data1[i]=dd;
+//        });
+//		series[0].data = data1;
+//	});
 
+	/*
+	 * 第二种实现方法
+	 */
 	var chart = {
 		renderTo : "container",
 		plotBackgroundColor : null,
@@ -80,8 +96,8 @@ $(function() {
 	$.ajaxSettings.async = false;
 	var data1 = [];
 	$.getJSON("Emp/analyzeEmp.do", function(dict) {
-		//alert("获取到数据");
 //		alert(dict[0]);
+		//对json进行遍历
 		$.each(dict, function(i, item) {
 //            alert(item.name);
 //            alert(item.percent);

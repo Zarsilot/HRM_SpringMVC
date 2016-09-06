@@ -13,7 +13,7 @@
 
 </head>
 <body>
-	<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+	<div id="container" style="width: 500px; height: 400px; margin: 0 0;"></div>
 	<script type="text/javascript" src="<%=path%>/js/analyze.js"></script>
 </body>
 </html>

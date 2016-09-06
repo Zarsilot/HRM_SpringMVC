@@ -4,3 +4,5 @@ CREATE TABLE hrm_sys(
        tid NUMBER(3) NOT NULL
 )
 ALTER TABLE hrm_sys ADD state varchar2(20);
+
+select * from HRM_DEPT;

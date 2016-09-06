@@ -47,7 +47,7 @@
 	    <div data-options="region:'west',title:'菜单栏',split:true" style="width:20%;" dir="ltr">	
 				<div class="easyui-accordion" data-options="fit:true,border:false">   
 			        <div title="系统参数" style="padding:5px;">   
-			           <ul id="sysBox" data-options="url:'<%=path %>/tree.json'">
+			           <ul id="sysBox">
 							
 						</ul>
 			        </div>   

@@ -37,7 +37,7 @@ public class LoginController {
 		session.setAttribute("slevel", alevel);
 		User user = this.userService.getUserById(1001);
 		if(user.getAdminId() > 0){
-			System.out.println("获取到数据");
+//			System.out.println("获取到数据");
 		}
 		
 		return view;
