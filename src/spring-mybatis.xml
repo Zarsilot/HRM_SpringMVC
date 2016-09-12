@@ -17,13 +17,17 @@
 	
 	<!-- 自动扫描  -->
 	<context:component-scan base-package="com.icss"></context:component-scan>
-	<!-- 引入配置文件classpath等同于src目录 -->
+	
+	<!-- 引入配置文件classpath等同于src目录,两种配置方式 -->
+	<!-- <context:property-placeholder location="classpath:jdbc.properties"/> -->
 	<bean id="propertyCOnfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:jdbc.properties"></property>
 	</bean>
 	
-	<!-- 数据库连接  -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<!-- 数据库连接
+		多数据源配置
+	  -->
+	<bean id="oracleDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${driver}"></property>
 		<property name="url" value="${url}"></property>
 		<property name="username" value="${username}"></property>
@@ -36,17 +40,52 @@
 		<property name="maxWait" value="${maxWait}"></property>
 	</bean>
 	
-	<!-- Spring和myBatis整合，不再需要mybatis的配置映射文件  -->
+	 <bean id="mySqlDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.mysql.driver}"/>
+        <property name="url" value="${jdbc.mysql.url}"/>
+        <property name="username" value="${jdbc.mysql.username}"/>
+        <property name="password" value="${jdbc.mysql.password}"/>
+        
+        <property name="initialSize" value="${initialSize}"></property>
+		<property name="maxActive" value="${maxActive}"></property>
+		<property name="maxIdle" value="${maxIdle}"></property>
+		<property name="minIdle" value="${minIdle}"></property>
+		<property name="maxWait" value="${maxWait}"></property>
+    </bean>
+	
+	<bean id="multipleDataSource" class="com.icss.system.MultipleDataSource">
+		<property name="defaultTargetDataSource" ref="oracleDataSource"></property>
+		<property name="targetDataSources">
+			<map>
+				<entry key="oracleDataSource" value-ref="oracleDataSource"></entry>
+				<entry key="mysqlDataSource" value-ref="mysqlDataSource"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- master-slave类型多数据源 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
-		<!-- <property name="configLocation" value="classpath:mybatisConfig.xml"></property> -->
+		<property name="dataSource" ref="multipleDataSource"></property>
 		<property name="mapperLocations" value="classpath:com/icss/mapping/*.xml"></property>
 	</bean>
+	
+	<!--单数据源： Spring和myBatis整合，不再需要mybatis的配置映射文件  -->
+	<!-- 
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+	 -->
+		<!-- <property name="configLocation" value="classpath:mybatisConfig.xml"></property> -->
+	<!-- 
+		<property name="mapperLocations" value="classpath:com/icss/mapping/*.xml"></property>
+	</bean>
+	 -->
 	
 	<!--批量扫描配置文件  -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.icss.dao"></property>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
+	
+	<!-- 事务  -->
 
 </beans>

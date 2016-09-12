@@ -145,6 +145,7 @@ html, body {
 				</tr>
 				 -->
 		<div id='container'>
+		<div style="z-index:9999;">
 		<form id="loginform" method="post" onsubmit="return checkForm()">   
 			<fieldset style="width:260px;height:150px">
 				
@@ -172,6 +173,7 @@ html, body {
 			    </div>  
 			</fieldset>
 		</form>  
+		</div>
 		</div>
 		<!-- Container结束 -->
 		<script type="text/javascript">
