@@ -67,6 +67,13 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="multipleDataSource"></property>
 		<property name="mapperLocations" value="classpath:com/icss/mapping/*.xml"></property>
+		<property name="configurationProperties">
+			<props>
+				<prop key="cacheEnables">true</prop>
+				<prop key="lazeLoadingEnabled">false</prop>
+				<prop key="aggressiveLazyLoading">true</prop>
+			</props>
+		</property>
 	</bean>
 	
 	<!--单数据源： Spring和myBatis整合，不再需要mybatis的配置映射文件  -->
