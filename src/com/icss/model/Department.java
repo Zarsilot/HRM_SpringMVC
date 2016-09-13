@@ -1,8 +1,14 @@
 package com.icss.model;
 
+import java.io.Serializable;
+/*
+ * 
+ * 修改2016-09-13，实现Serializable接口，增加二级缓存
+ */
+public class Department implements Serializable{
 
-public class Department {
-
+	private static final long serialVersionUID = 2683865058562864436L;
+	
 	private Integer deptId;
 	private String deptName;
 	private String locName;
