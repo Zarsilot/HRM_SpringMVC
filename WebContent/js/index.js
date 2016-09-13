@@ -1,9 +1,8 @@
 
-var NUM_PARTICLES = ( ( ROWS = 50 ) * ( COLS = 100 ) ),
+var NUM_PARTICLES = ( ( ROWS = 5 ) * ( COLS = 10 ) ),
     THICKNESS = Math.pow( 80, 2 ),
     SPACING = 9,
     MARGIN = 100,
-    COLOR = 220,
     DRAG = 0.95,
     EASE = 0.25,
     
@@ -45,8 +44,7 @@ particle = {
 
 function init() {
 
-  container = document.getElementById( 'container' );
-  canvas = document.createElement( 'canvas' );
+  canvas = document.getElementById( 'canvas' );
   
   ctx = canvas.getContext( '2d' );
   man = false;

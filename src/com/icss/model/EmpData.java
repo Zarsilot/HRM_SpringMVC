@@ -2,20 +2,20 @@ package com.icss.model;
 
 public class EmpData {
 	private int eId;
-	private String name;
-	private int percent;
+	private String eName;
+	private int percents;
 	
 	public EmpData() {
 		super();
 	}
 
-	public EmpData(int eId, String name, int percent) {
+	public EmpData(int eId, String eName, int percents) {
 		super();
 		this.eId = eId;
-		this.name = name;
-		this.percent = percent;
+		this.eName = eName;
+		this.percents = percents;
 	}
-	
+
 	public int geteId() {
 		return eId;
 	}
@@ -24,21 +24,20 @@ public class EmpData {
 		this.eId = eId;
 	}
 
-	public String getName() {
-		return name;
+	public String geteName() {
+		return eName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void seteName(String eName) {
+		this.eName = eName;
 	}
 
-	public int getPercent() {
-		return percent;
+	public int getPercents() {
+		return percents;
 	}
 
-	public void setPercent(int percent) {
-		this.percent = percent;
+	public void setPercents(int percents) {
+		this.percents = percents;
 	}
-	
 	
 }

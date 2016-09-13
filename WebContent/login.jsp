@@ -18,10 +18,10 @@ html, body {
 }
 
 #container {
-  background: #111111;
+  background: #03fff5;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 40%;
+  top: 30%;
 }
 
 #stats {
@@ -39,82 +39,6 @@ html, body {
   100% {
     transform: rotateY(0deg);
   }
-}
-.info {
-  transition: all 180ms ease-out;
-  transform-style: preserve-3d;
-  transform: perspective(800px);
-  font-family: "Quantico", sans-serif;
-  position: absolute;
-  font-size: 12px;
-  opacity: 0.8;
-  color: white;
-  width: 220px;
-  left: 0px;
-  top: 20px;
-}
-.info:hover {
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
-  opacity: 1;
-}
-.info h1, .info h2, .info h3 {
-  line-height: 1;
-  margin: 5px 0;
-}
-.info a {
-  transition: all 200ms ease-out;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
-  text-decoration: none;
-  opacity: 0.6;
-  color: white;
-}
-.info a:hover {
-  opacity: 0.99;
-}
-.info .about,
-.info .more {
-  transform-origin: 0% 50%;
-  transform: rotateY(120deg);
-  margin-bottom: 1px;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 12px 15px 12px 20px;
-}
-.info .about {
-  animation: show-info 500ms cubic-bezier(0.23, 1, 0.32, 1) 600ms 1 normal forwards;
-  padding-bottom: 15px;
-}
-.info .about a {
-  opacity: 0.9;
-}
-.info .about h1 {
-  letter-spacing: -1px;
-  font-weight: 300;
-  font-size: 19px;
-  opacity: 0.95;
-}
-.info .about h2 {
-  font-weight: 300;
-  font-size: 13px;
-  opacity: 0.8;
-}
-.info .about h3 {
-  text-transform: uppercase;
-  margin-top: 10px;
-  font-size: 11px;
-}
-.info .about h3:before {
-  margin-right: 2px;
-  font-size: 14px;
-  content: "\203A";
-}
-.info .more {
-  animation: show-info 500ms cubic-bezier(0.23, 1, 0.32, 1) 500ms 1 normal forwards;
-  padding: 5px 15px 10px 20px;
-}
-.info .more a {
-  text-transform: uppercase;
-  margin-right: 10px;
-  font-size: 10px;
 }
 
 </style>
@@ -145,7 +69,6 @@ html, body {
 				</tr>
 				 -->
 		<div id='container'>
-		<div style="z-index:9999;">
 		<form id="loginform" method="post" onsubmit="return checkForm()">   
 			<fieldset style="width:260px;height:150px">
 				
@@ -173,9 +96,8 @@ html, body {
 			    </div>  
 			</fieldset>
 		</form>  
-		</div>
-		</div>
-		<!-- Container结束 -->
+		</div><!-- Container结束 -->
+		
 		<script type="text/javascript">
 		    function checkForm(){
 	    		var formId = document.getElementById("loginform");

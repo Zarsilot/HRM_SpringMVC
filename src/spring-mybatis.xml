@@ -16,14 +16,30 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 	
 	<!-- 自动扫描  -->
-	<context:component-scan base-package="com.icss"></context:component-scan>
+	<context:component-scan base-package="com.icss"/>
 	
 	<!-- 引入配置文件classpath等同于src目录,两种配置方式 -->
 	<!-- <context:property-placeholder location="classpath:jdbc.properties"/> -->
-	<bean id="propertyCOnfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:jdbc.properties"></property>
 	</bean>
-	
+	<bean id="redisConfig" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	  <property name="locations" value="classpath:redis.properties">
+	 </property>
+	</bean>
+	<!-- 
+	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	  <property name="locations">
+	    <list>
+	     <value>classpath:*.properties</value>
+	   </list>
+	 </property>
+	</bean>
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+	  <property name="properties" ref="configProperties"/>
+	</bean>
+	 -->
+	 
 	<!-- 数据库连接
 		多数据源配置
 	  -->
@@ -58,7 +74,7 @@
 		<property name="targetDataSources">
 			<map>
 				<entry key="oracleDataSource" value-ref="oracleDataSource"></entry>
-				<entry key="mysqlDataSource" value-ref="mysqlDataSource"></entry>
+				<entry key="mySqlDataSource" value-ref="mySqlDataSource"></entry>
 			</map>
 		</property>
 	</bean>
@@ -70,7 +86,7 @@
 		<property name="configurationProperties">
 			<props>
 				<prop key="cacheEnables">true</prop>
-				<prop key="lazeLoadingEnabled">false</prop>
+				<prop key="lazyLoadingEnabled">false</prop>
 				<prop key="aggressiveLazyLoading">true</prop>
 			</props>
 		</property>

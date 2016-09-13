@@ -3,15 +3,31 @@
 <mapper namespace="com.icss.dao.IEmpDataDao">
 	<resultMap id="BaseResultMap" type="com.icss.model.EmpData">
 		<id column="eid" property="eId" jdbcType="INTEGER"></id>
-		<result column="ename" property="name" jdbcType="NVARCHAR"></result>
-		<result column="percen" property="percent" jdbcType="INTEGER"></result>
+		<result column="ename" property="eName" jdbcType="NVARCHAR"></result>
+		<result column="percen" property="percents" jdbcType="INTEGER"></result>
 	</resultMap>
 	
 	<resultMap id="EmpData" type="com.icss.model.EmpData">
-		<result column="ename" property="name" jdbcType="NVARCHAR"></result>
-		<result column="percen" property="percent" jdbcType="INTEGER"></result>
+		<result column="ename" property="eName" jdbcType="NVARCHAR"></result>
+		<result column="percen" property="percents" jdbcType="INTEGER"></result>
 	</resultMap>
-
+	
+	<!-- 关联查询，一对多，多对一  -->
+	<!-- 嵌套语句查询  -->
+	<!-- 
+	<resultMap id="" type="">
+		<id column="" property=""></id>
+		<result column="" property=""></result>
+		<association property="deptId" column="dept_id"
+						javaType="com.icss.model.Department"
+						select="com.icss.mapping.DeptMapper.selectDeptById">
+		</association>
+		<collection property="" column="" ofType=""
+					select="">
+		</collection>
+	</resultMap>
+	 -->
+	 
 	<sql id="Base_Column_List">
 		eid,ename,percen
 	</sql>

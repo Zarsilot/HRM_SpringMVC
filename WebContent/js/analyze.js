@@ -101,7 +101,7 @@ $(function() {
 		$.each(dict, function(i, item) {
 //            alert(item.name);
 //            alert(item.percent);
-			var dd = new Array(item.name,item.percent);
+			var dd = new Array(item.eName,item.percents);
             data1[i]=dd;
         });
 		series[0].data = data1;
