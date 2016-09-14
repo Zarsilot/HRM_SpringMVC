@@ -2,13 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.icss.dao.IDeptDao">
 	<!-- 开启二级缓存,使用自定义redis作为二级缓存		flushInterval="6000000" -->
-	<!-- 
 	<cache eviction="LRU" 
 		size="1024"
 		readOnly="false"
 		type="com.icss.system.MyBatisRedisCache">
 	</cache>
-	 -->
 	 
 	<resultMap id="BaseResultMap" type="com.icss.model.Department">
 		<id column="dept_id" property="deptId" jdbcType="INTEGER"></id>
