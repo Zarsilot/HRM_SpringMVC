@@ -110,5 +110,21 @@
 	</bean>
 	
 	<!-- 事务  -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED" />
+            <tx:method name="*" rollback-for="Throwable" no-rollback-for="InstrumentNotFoundException"/>
+        </tx:attributes>
+    </tx:advice>
+  
+    <!-- 切面  -->
+	<aop:config>
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.wang.service..*.*(..))" "/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPointcut"/>
+	</aop:config>
 
 </beans>

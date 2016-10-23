@@ -45,7 +45,7 @@ public class TestMybatis {
 //		SqlSessionFactory sqlSessionFactory = get;	
 		
 //		SqlSession sqlSession = sqlsessionFactory.openSession();
-		
+
 	}
 	
 }

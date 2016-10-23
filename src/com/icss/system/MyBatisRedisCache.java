@@ -107,9 +107,11 @@ public class MyBatisRedisCache implements Cache {
 		} catch (JedisConnectionException e) {
 			borrowOrOprSuccess = false;
 			if (jedis != null)
-				jedisPool.returnBrokenResource(jedis);
+				//close()方法替换returnBrokenResource()方法
+				jedisPool.close();
 		} finally {
 			if (borrowOrOprSuccess)
+//				jedisPool.
 				jedisPool.returnResource(jedis);
 		}
 		return value;
@@ -131,6 +133,7 @@ public class MyBatisRedisCache implements Cache {
 				jedisPool.returnBrokenResource(jedis);
 		} finally {
 			if (borrowOrOprSuccess)
+				jedis.close();
 				jedisPool.returnResource(jedis);
 		}
 	}
@@ -196,6 +199,7 @@ public class MyBatisRedisCache implements Cache {
 				// 释放redis对象
 				borrowOrOprSuccess = false;
 				if (jedis != null)
+					jedis.disconnect();
 					pool.returnBrokenResource(jedis);
 			} finally {
 				// 返还到连接池
