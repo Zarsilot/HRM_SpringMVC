@@ -15,11 +15,12 @@ import com.icss.service.IUserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
+//@ContextConfiguration(classes=xxx.class)
 public class TestMybatis {
 	private static Logger logger = Logger.getLogger(TestMybatis.class);
 	
 	@Resource 
-	private IDeptService deptService = null;
+	private IDeptService deptService = null; 
 	@Resource
 	private IUserService userService = null;
 	
@@ -47,5 +48,5 @@ public class TestMybatis {
 //		SqlSession sqlSession = sqlsessionFactory.openSession();
 
 	}
-	
+	Advice
 }

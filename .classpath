@@ -6,7 +6,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aspectjweaver-1.6.11.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aspectjweaver-1.6.11.jar" sourcepath="F:/JarPacks/spring-framework-4.2.6.RELEASE/libs/spring-aop-4.2.6.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-dbcp-1.2.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.4.jar"/>
@@ -25,11 +25,11 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-log4j12-1.7.7.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-aop-4.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-aop-4.2.6.RELEASE.jar" sourcepath="F:/JarPacks/spring-framework-4.2.6.RELEASE/libs/spring-aop-4.2.6.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-aspects-4.2.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-beans-4.2.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-4.2.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-core-4.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-beans-4.2.6.RELEASE.jar" sourcepath="F:/JarPacks/spring-framework-4.2.6.RELEASE/libs/spring-beans-4.2.6.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-4.2.6.RELEASE.jar" sourcepath="F:/JarPacks/spring-framework-4.2.6.RELEASE/libs/spring-context-4.2.6.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-core-4.2.6.RELEASE.jar" sourcepath="F:/JarPacks/spring-framework-4.2.6.RELEASE/libs/spring-core-4.2.6.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-jdbc-4.2.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-tx-4.2.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-web-4.2.6.RELEASE.jar"/>
