@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 
-	<!-- 启用spring mvc注解  -->
+	<!-- 启用注解驱动的Spring MVC  -->
 	<mvc:annotation-driven/>
 
 	<!-- 自动扫描com.wang.controller下被@Controller/@Component/@Service/@Repository注解的类，并实例化 -->
