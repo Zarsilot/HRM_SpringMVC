@@ -1158,3 +1158,10 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 [INFO] [2016-09-01 21:42:52][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 [INFO] [2016-09-01 21:42:53][com.icss.test.TestMybatis]***tom***1
 [INFO] [2016-09-01 21:42:53][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@28735aee: startup date [Thu Sep 01 21:42:51 CST 2016]; root of context hierarchy
+[INFO] [2016-11-01 22:14:51][org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping]Mapped "{[/back],methods=[GET]}" onto public java.lang.String com.icss.controller.HomeController.home()
+[INFO] [2016-11-01 22:14:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@3862bba7
+[INFO] [2016-11-01 22:22:58][org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping]Mapped "{[/back],methods=[GET]}" onto public java.lang.String com.icss.controller.HomeController.home()
+[INFO] [2016-11-01 22:22:58][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@3862bba7
+[INFO] [2016-11-01 22:22:58][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+[INFO] [2016-11-01 22:22:58][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+[INFO] [2016-11-01 22:22:58][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 0 ms
