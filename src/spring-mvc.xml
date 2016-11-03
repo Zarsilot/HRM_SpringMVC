@@ -6,11 +6,12 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- 启用注解驱动的Spring MVC  -->
 	<mvc:annotation-driven/>
@@ -19,7 +20,9 @@
 	<context:component-scan base-package="com.icss.controller"></context:component-scan>
 	<context:component-scan base-package="com.icss.service"></context:component-scan>
 	
-	<!-- 定义跳转文件的前后缀，视图模型设置 --> 
+	<!-- 定义跳转文件的前后缀，视图模型设置 
+		viewClass属性表示将JSP解析为JSTLView视图
+	--> 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/admin/"></property>
 		<property name="suffix" value=".jsp"></property>
@@ -46,4 +49,5 @@
 			</list>
 		</property>
 	</bean>
+
 </beans>

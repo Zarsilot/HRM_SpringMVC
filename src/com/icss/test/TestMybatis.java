@@ -48,5 +48,5 @@ public class TestMybatis {
 //		SqlSession sqlSession = sqlsessionFactory.openSession();
 
 	}
-	Advice
+	
 }

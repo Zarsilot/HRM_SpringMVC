@@ -1,12 +1,20 @@
 package com.icss.model;
 
-import java.util.Date;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class Employee {
 
 	private int empId;
+	//使用Java API实现对输入的限制
+	@NotNull
+	@Size(min=5,max=25,message="{empName.size}")
 	private String empName;
+	@NotNull
+	@Email(message="{email.valid}")
 	private String email;
+	@NotNull
+	@Size(min=7,max=11,message="{phoneNumber.size}")
 	private String phoneNumber;
 	private String hireDate;
 	private String jobId;

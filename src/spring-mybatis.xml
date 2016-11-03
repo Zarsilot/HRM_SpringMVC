@@ -123,7 +123,7 @@
   
     <!-- 切面  -->
 	<aop:config>
-		<aop:pointcut id="transactionPointcut" expression="execution(* com.wang.service..*.*(..))" "/>
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.icss.service..*.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPointcut"/>
 	</aop:config>
 
