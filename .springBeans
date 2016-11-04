@@ -7,10 +7,10 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
+		<config>src/spring-jms.xml</config>
+		<config>src/spring-rabbitmq.xml</config>
 	</configs>
 	<autoconfigs>
-		<config>src/spring-mvc.xml</config>
-		<config>src/spring-mybatis.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
