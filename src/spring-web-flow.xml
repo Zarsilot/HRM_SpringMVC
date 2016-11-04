@@ -23,9 +23,34 @@
 	</bean>
 	
 	<!-- 定义视图状态 -->
-	<view-state id="start" view="welcome">
-		
+	<view-state id="start" view="welcome"></view-state>
 	
-	</view-state>
+	<!-- 全局转移 -->
+	<global-transitions>
+		<transition on="cancel" to="endState" />
+	</global-transitions>
+	
+	<!-- 行为状态 -->
+	<action-state id="saveOrder">
+		<!-- 行为状态要做的事情 -->
+		<evaluate expression="" />
+		<transition to="thankYou"/>
+	</action-state>
+	
+	<!-- 决策状态 -->
+	<decision-state id="checkDeliveryArea">
+		<if test="" then="" else="" />
+		
+	</decision-state>
+	
+	<!-- 子流程状态 -->
+	<subflow-state id="oeder" subflow="">
+		<input name="order" value="order" />
+		<!-- on指定触发转移的事件，to指定流程的下一个状态 -->
+		<transition on="orderCreated" to="payment" />
+	</subflow-state>
+	
+	<!-- 结束状态 -->
+	<end-state id="" />
 
 </flow>

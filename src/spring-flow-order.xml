@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<var name="order" class="com.icss.model.Order" />
+	<view-state id="welcome">
+		<transition on="phoneEntered" to="lookupCustomer"></transition>
+	</view-state>
+	<!-- 查找顾客 -->
+	<action-state id="lookupCustomer">
+		<evaluate result="customer" expression=""></evaluate>
+		<transition to="registrationForm" on-exception="com.icss.service.CustomerNotFoundException"></transition>
+		<transition to="customerReady"></transition>
+	</action-state>
+	<!-- 注册顾客 -->
+
+	
+	<subflow-state id="identifyCustomer" subflow="model/customer">
+		<!-- 使用output属性来填充order的customer属性 -->
+		<output name="customer" value="order.customer"></output>
+		<transition on="customerReady" to="buildOrder"/>
+	</subflow-state>
+	<subflow-state id="buildOrder" subflow="model/order">
+		<!-- 将order流程变量作为输入， -->
+		<input name="order" value="order"></input>
+		<transition on="orderCreated" to="takePayment"/>
+	</subflow-state>
+	<subflow-state id="takePayment" subflow="model/payment">
+		<input name="order" value="order"></input>
+		<transition on="paymentTaken" to="saveOrder"/>
+	</subflow-state>
+	<action-state id="saveOrder">
+		<!-- 调用ID为pizzaFlowActions的Bean的saveOrder()方法  -->
+		<evaluate expression="pizzaFlowActions.saveOrder(order)" />
+		<transition to="thankCustomer"/>
+	</action-state>
+	<view-state id="thankCustomer">
+		<transition to="endState"/>
+	</view-state>
+	<end-state id="endState"/>
+	<global-transitions>
+		<transition on="cancel" to="endState" />
+	</global-transitions>
+
+</flow>
