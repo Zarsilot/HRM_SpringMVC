@@ -9,8 +9,14 @@
 	<configs>
 		<config>src/spring-jms.xml</config>
 		<config>src/spring-rabbitmq.xml</config>
+		<config>src/spring-redis.xml</config>
+		<config>src/spring-security.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/spring-web-flow.xml</config>
+		<config>src/spring-mvc.xml</config>
+		<config>src/spring-mybatis.xml</config>
+		<config>src/spring-flow-order.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

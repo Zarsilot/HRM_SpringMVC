@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.2.xsd">
+
+	<!-- 启用Spring对注解驱动缓存的支持 -->
+	<cache:annotation-driven/>
+	
+	<!-- 声明缓存管理器 -->
+	<bean id="cacheManager" class="org.springframework.cache.concurrent.ConcurrentMapCacheManager"></bean>
+	
+	<aop:config>
+		<aop:advisor advice-ref="cacheAdvice" pointcut=""/>
+	</aop:config>
+	
+	<cache:advice id="cacheAdvice">
+		<cache:caching>
+			<!-- unless -->
+			<cache:cacheable cache="hrmCache" method="findRecent" />
+			<cache:cacheable cache="hrmCache" method="findOne" />
+			<!-- unless -->
+			<cache:cache-put cache="hrmCache" method="save" key="#reult.id"/>
+			<!-- all-entries/before-invocation -->
+			<cache:cache-evict cache="hrmCache" method="remove" />
+		</cache:caching>
+	</cache:advice>
+</beans>

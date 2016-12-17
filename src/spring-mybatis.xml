@@ -110,7 +110,7 @@
 	</bean>
 	
 	<!-- 事务  -->
-	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	<bean id="transactionManager" class="">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 

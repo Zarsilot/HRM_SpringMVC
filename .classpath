@@ -55,6 +55,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activemq-all-5.13.3.jar" sourcepath="F:/JarPacks/spring-framework-4.2.6.RELEASE/libs/spring-jms-4.2.6.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-jms-4.2.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-rabbit-1.6.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-security-core-4.1.0.RELEASE.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
